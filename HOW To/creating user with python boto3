@@ -1,0 +1,53 @@
+#Create a User
+Create a new IAM user for your AWS account.
+
+For information about limitations on the number of IAM users you can create, see Limitations on IAM Entities in the IAM User Guide.
+
+The example below shows how to:
+
+##Create a new IAM user using create_user.
+
+1.Example
+
+import boto3
+
+# Create IAM client
+iam = boto3.client('iam')
+
+# Create user
+response = iam.create_user(
+    UserName='IAM_USER_NAME'
+)
+print(response)
+
+##List Users in Your Account
+
+import boto3
+
+# Create IAM client
+iam = boto3.client('iam')
+
+# List users with the pagination interface
+paginator = iam.get_paginator('list_users')
+for response in paginator.paginate():
+    print(response)
+    
+###Update a User's Name
+import boto3
+
+# Create IAM client
+iam = boto3.client('iam')
+
+# Update a user name
+iam.update_user(UserName='IAM_USER_NAME',NewUserName='NEW_IAM_USER_NAME')
+
+###Delete a User
+
+import boto3
+
+# Create IAM client
+iam = boto3.client('iam')
+
+## Delete a user
+iam.delete_user(UserName='IAM_USER_NAME')
+

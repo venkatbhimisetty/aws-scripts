@@ -1,4 +1,19 @@
-# AWS CLI SETUP
+# AWS CLI SETUP for RHEL
+
+    1  clear
+    2  cd /tmp
+    3  curl -O https://bootstrap.pypa.io/get-pip.py
+    4  python get-pip.py --user
+    5  export PATH=~/.local/bin:$PATH
+    6  source ~/.bash_profile
+    7  pip --version
+    8  
+    9  pip install awscli --upgrade --user
+   10  aws --version
+   11  pip install boto3
+   12  aws configure
+   13  aws s3 ls
+ 
 Install Python, pip, and AWS Command Line Interface on Linux ( Redhat / CentOS )
 Install pip
 
